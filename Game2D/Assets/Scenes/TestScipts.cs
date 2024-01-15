@@ -4,15 +4,20 @@ using UnityEngine;
 
 public class TestScipts : MonoBehaviour
 {
+    [SerializeField] float steerspeed = 1f;
+    [SerializeField] float movespeed = 0.01f;
     // Start is called before the first frame update
     void Start()
     {
-        
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        float steerAmount = Input.GetAxis("Horizontal") * steerspeed;
+        float movement = Input.GetAxis("Vertical") * movespeed;
+        transform.Rotate(0, 0, -steerAmount);
+        transform.Translate(0, movement, 0);
+      
     }
 }
