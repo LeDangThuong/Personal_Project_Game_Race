@@ -14,8 +14,8 @@ public class TestScipts : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        float steerAmount = Input.GetAxis("Horizontal") * steerspeed;
-        float movement = Input.GetAxis("Vertical") * movespeed;
+        float steerAmount = Input.GetAxis("Vertical") * steerspeed;
+        float movement = Input.GetAxis("Horizontal") * movespeed;
         transform.Rotate(0, 0, -steerAmount);
         transform.Translate(0, movement, 0);
       
